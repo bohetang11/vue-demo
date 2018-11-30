@@ -38,9 +38,23 @@ export default {
               message: "恭喜你!登录成功!",
               type: "success"
             });
+          }else{
+            this.$message({
+              message: "登录失败!请重新登录!",
+              type: "success"
+            });
           }
         });
     }
   }
 };
 </script>
+
+<style lang='less'>
+.login-container{
+  width: 500px;
+  margin: 200px auto;
+}
+
+</style>
+

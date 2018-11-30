@@ -7,6 +7,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   data() {
     return {
@@ -33,6 +34,28 @@ export default {
         }
       ]
     };
+  },
+  created(){
+    this.getUsers()
+  },
+  methods:{
+    getUsers(){
+      let token=localStorage.getItem('token')
+      console.log(token)  
+      axios.get('/api/private/v1/users',{
+        headers:{
+          Authorization: token
+        },
+        params:{
+          pagenum: 1,
+          pagesize: 10
+        }
+      }).then(res=>{
+        console.log(res)
+        if(res.data.meta.status===200){
+        }
+      })
+    }
   }
 };
 </script>
