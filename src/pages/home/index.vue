@@ -3,7 +3,7 @@
     <el-row class="tac">
       <el-col :span="4">
         <el-menu
-          default-active="2"
+          default-active="1-1"
           class="el-menu-vertical-demo"
           @open="handleOpen"
           @close="handleClose"
@@ -48,13 +48,13 @@ export default {
   },
   methods: {
     handleOpen(key, keyPath) {
-      console.log(key, keyPath);
+      // console.log(key, keyPath);
     },
     handleClose(key, keyPath) {
-      console.log(key, keyPath);
+      // console.log(key, keyPath);
     },
     handleSelect(key, keyPath) {
-      console.log(key, keyPath);
+      console.log(key);
       switch (key) {
         case "1-1":
           this.$router.push("/home/users");
